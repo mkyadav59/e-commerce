@@ -181,6 +181,7 @@
 		{
 			//var_dump($row);
 
+			echo '<center>';
 			echo '<div style="float:left" class="desc" data-id="'.$row["product_id"].'">';
 			echo '<img style="width:165px;float:left;height:175px" src="'.$row['product_image'].'" ></img>';
 			echo '<br>';
@@ -189,6 +190,8 @@
 			echo "<input type='button' class='button' value='Product Description'/>";
 			echo '<br>';
 			echo '</div>';
+
+			echo '</center>';
 			
 		}
 			
