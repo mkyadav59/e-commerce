@@ -74,7 +74,7 @@ if($count>0)
 			echo '</td>';
 
 			echo '<td>';
-			echo '<input type="submit" value="Buy Now" style="width:150px;font-size:20px;height:50px;color:black;background-color:orange;text-align:center" id="b_id" name="b_id">';
+			echo '<a href="purchase.php" style="text-decoration:none"><input type="submit" value="Buy Now" style="width:150px;font-size:20px;height:50px;color:black;background-color:orange;text-align:center" id="b_id" name="b_id"></a>';
 			echo '</td>';
 
 			echo '<td>';
