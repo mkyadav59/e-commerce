@@ -4,7 +4,7 @@
 
 
 
-  	$sql= "select product_image,product_name ,product_id from admin_add_product";
+  	$sql= "select product_image,product_name ,product_id,product_cost from admin_add_product";
 	$result=mysqli_query($con,$sql);
 	$count=mysqli_num_rows($result);
 
@@ -157,7 +157,7 @@
 	
 				echo '</span>';
 
-				echo '<a href="user_login_table.php" style="text-decoration:none;color:green;id="up"><button type="button" id="up" style="color:green;width:100px;height:-20px;margin-left:10px"><h2>Sign-Up</h2></button></a>';
+				echo '<a href="user_login_table.php" style="text-decoration:none;color:green;id="up"><button type="button" id="up" style="color:green;width:100px;height:-20px;margin-left:10px"><h2>Sign-In</h2></button></a>';
 
 				echo '<center><input type="search" id="search" name="search_bar"style="width:600px;height:50px;margin-left:300px;float:left" placeholder="Enter Product"/>';
 				echo '<input type="button" name="search_button" value="Search" style="width:100px;height:50px;margin-left:-250px"></button>';
@@ -186,6 +186,8 @@
 			echo '<img style="width:165px;float:left;height:175px" src="'.$row['product_image'].'" ></img>';
 			echo '<br>';
 			echo $row["product_name"];
+			echo '<br>';
+			echo '<p style="color:brown"/>Cost:Rs '.$row["product_cost"].'/-';
 			echo '<br>';
 			echo "<input type='button' class='button' value='Product Description'/>";
 			echo '<br>';

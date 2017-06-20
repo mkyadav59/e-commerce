@@ -4,15 +4,14 @@ session_start();
 
 $email=$_SESSION['email'];
 //print_r($_SESSION['email']);
-echo $sql="select Add_id_key, product_id from Add_to_cart_quantity where email ='$email'";
-$query=mysqli_query($con,$sql);
-echo $count=mysqli_num_rows($query);
-$row=mysqli_fetch_assoc($query);
-echo $Add_id_key=$row['Add_id_key'];
-echo 'hii';
-echo '<br>';
-
-	echo $sql="select * from admin_add_product INNER JOIN Add_to_cart_quantity ON admin_add_product.product_id=Add_to_cart_quantity.product_id where Add_to_cart_quantity.Add_id_key='$Add_id_key'";
+$sql1="select *from Add_to_cart where email_id='$email'" ;
+$query=mysqli_query($con,$sql1);
+//print_r($query);
+$count=mysqli_num_rows($query);
+//print_r($query);
+ $row=mysqli_fetch_assoc($query);
+ echo $Add_id_key=$row['Add_id_key'];
+ echo $sql="select * from admin_add_product INNER JOIN Add_to_cart_quantity ON admin_add_product.product_id=Add_to_cart_quantity.product_id where Add_to_cart_quantity.Add_id_key='$Add_id_key'";
 	$query=mysqli_query($con,$sql);
 	$count=mysqli_num_rows($query);
 
@@ -35,6 +34,8 @@ echo '<br>';
 		echo '<center>';
 
 		echo '<tr>';
+					$product_id=$row['product_id'];
+
 			echo '<td>';
 			   echo $row['product_name'];
 			echo '</td>';
@@ -77,9 +78,10 @@ echo '<br>';
 echo '<br>';
 echo '<br>';
 
- 	$sum="select SUM(product_cost) from admin_add_product where product_id='$product_id'";
+ 	echo $sum="select SUM(product_cost) from admin_add_product where product_id='$product_id'";
 	$res=mysqli_query($con,$sum);
 	$row=mysqli_fetch_assoc($res);
+	//print_r($row);
 
 	//print_r($row); 
 	echo "<b>Total Cost Of Product=</b>".$row['SUM(product_cost)'];
